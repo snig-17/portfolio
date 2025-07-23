@@ -69,7 +69,8 @@ const Portfolio: React.FC = () => {
   }, []);
 
   return (
-    <section className="portfolio">
+  <section id="portfolio" className="portfolio">
+        
       {/* Mountain Landscape Background */}
       <div className="portfolio-background">
         <div className="mountain-overlay"></div>

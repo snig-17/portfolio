@@ -1,14 +1,120 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Imbue', serif;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Imbue', serif;
+}
+
+/* Navigation Link Styles */
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+/* Keep all your existing CSS below... */
+
+
+/* Navigation Bar - Sticky */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 30px 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Navigation on scroll - enhanced blur */
+.navigation.scrolled {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-items li {
+  font-family: 'Imbue', serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-items li:hover {
+  color: white;
+}
+
+.nav-center {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+/* Navigation Link Styles */
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+/* Hero Section */
+/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80');
+  background-image: var(--hero-bg);
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   color: white;
   overflow: hidden;
+  /* No padding-top needed since nav is transparent overlay */
 }
 
 .hero::before {
@@ -25,60 +131,203 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left Side - Description and Interests */
+.hero-left {
+  flex: 1;
   max-width: 600px;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 300;
-  margin-bottom: 2rem;
-  line-height: 1.2;
+/* Right Side - Main Title */
+.hero-right {
+  flex: 1;
+  text-align: right;
 }
 
+/* Main Title - "Hi there, I'm" on RIGHT side */
+.hero-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+/* "Snigdha!" name - uses Imbue */
 .hero-name {
+  font-family: 'Imbue', serif;
   font-weight: 600;
 }
 
+/* Description Text - LEFT side, much bigger */
 .hero-description {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
 }
 
 .hero-description p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
+/* Interests List - LEFT side, bigger */
 .hero-interests {
   list-style: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: #FFFFFF;
 }
 
 .hero-interests li {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 110%;
+  letter-spacing: 0%;
 }
 
+/* "(I took this picture)" text */
+.photo-credit {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 1rem;
+}
+
+/* Timestamp */
 .hero-timestamp {
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
+  bottom: 3rem;
+  right: 3rem;
+  font-family: 'Imbue', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
   color: rgba(255, 255, 255, 0.7);
   z-index: 2;
 }
 
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+  
+  .hero-description {
+    font-size: 42px;
+  }
+  
+  .hero-interests li {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 968px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-left {
+    order: 2;
+    margin-top: 2rem;
+  }
+  
+  .hero-right {
+    order: 1;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-description {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .hero-interests li {
+    font-size: 36px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
+  .nav-items {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .nav-items li {
+    font-size: 14px;
+  }
+  
+  .nav-center {
+    font-size: 16px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-description {
+    font-size: 28px;
+  }
+  
+  .hero-interests li {
+    font-size: 28px;
+  }
+  
+  .hero-timestamp {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 1rem;
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }
   
-  .hero-content {
-    padding: 0 1rem;
+  .hero-description {
+    font-size: 24px;
   }
   
-  .hero-timestamp {
-    bottom: 1rem;
-    right: 1rem;
+  .hero-interests li {
+    font-size: 24px;
+  }
+  
+  .navigation {
+    padding: 20px 30px;
+  }
+  
+  .photo-credit {
+    font-size: 12px;
   }
 }
