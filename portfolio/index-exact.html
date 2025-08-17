@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <meta name="description" content="London-based developer with a passion for global politics, technology, ethics, and photography">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Exact Layout CSS -->
+    <link rel="stylesheet" href="css/exact-layout.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading Portfolio</div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar - Exact Recreation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#home" class="nav-link nav-name">Your Name</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact Me</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Exact Layout -->
+    <section id="home" class="hero">
+        <!-- Background Image Slideshow -->
+        <div class="hero-backgrounds">
+            <div class="hero-bg bg-1 active"></div>
+            <div class="hero-bg bg-2"></div>
+            <div class="hero-bg bg-3"></div>
+            <div class="hero-bg bg-4"></div>
+            <div class="hero-bg bg-5"></div>
+        </div>
+        
+        <!-- Hero Overlay -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Hero Content -->
+        <div class="hero-container">
+            <!-- Greeting - Top Right -->
+            <div class="hero-greeting">
+                <h1 class="greeting-text">Hi there, I'm<br>Your Name!</h1>
+            </div>
+            
+            <!-- Description - Left Side -->
+            <div class="hero-description">
+                <h2 class="description-title">I am a developer based in London.</h2>
+                <p class="description-subtitle">I have a passion for</p>
+                <ul class="interests-list">
+                    <li class="interest-item">global politics,</li>
+                    <li class="interest-item">technology,</li>
+                    <li class="interest-item">ethics,</li>
+                    <li class="interest-item">photography <span class="photo-note">(I took this picture)</span></li>
+                </ul>
+            </div>
+            
+            <!-- Timestamp - Bottom Right -->
+            <div class="hero-timestamp">
+                <div class="timestamp-text" id="currentTime">01/02/2013 12:02 PM</div>
+            </div>
+        </div>
+        
+        <!-- Background Controls -->
+        <div class="bg-controls">
+            <div class="bg-dot active" data-bg="0"></div>
+            <div class="bg-dot" data-bg="1"></div>
+            <div class="bg-dot" data-bg="2"></div>
+            <div class="bg-dot" data-bg="3"></div>
+            <div class="bg-dot" data-bg="4"></div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-content">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-text">
+                I'm a passionate developer based in London, focused on creating meaningful 
+                digital experiences. My work spans across modern web technologies with a 
+                special interest in the intersection of technology, ethics, and global politics. 
+                When I'm not coding, you'll find me behind the camera, capturing the world 
+                through photography.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-text">
+                Here you'll find a collection of my recent work, ranging from web applications 
+                to photography projects. Each project represents a unique challenge and an 
+                opportunity to explore new technologies and creative approaches.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-text">
+                My professional journey has taken me through various roles in web development, 
+                from frontend interfaces to full-stack applications. I've had the privilege 
+                of working with diverse teams and contributing to projects that make a real 
+                impact in people's lives.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-text">
+                I'm always interested in discussing new opportunities, creative projects, 
+                or simply having a conversation about technology and its impact on society. 
+                Feel free to reach out if you'd like to connect.
+            </p>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="js/exact-layout.js"></script>
+</body>
+</html>

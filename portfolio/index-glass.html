@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Creative Developer</title>
+    <meta name="description" content="London-based developer with a passion for global politics, technology, ethics, and photography">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Glass Morphism CSS -->
+    <link rel="stylesheet" href="css/glass-morphism.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading Experience</div>
+        </div>
+    </div>
+
+    <!-- Glass Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Your Name</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="section-background"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <div class="hero-glass" data-aos="fade-up" data-aos-duration="1200">
+                <div class="hero-greeting">Hi there, I'm</div>
+                <div class="hero-name">Your Name!</div>
+                <div class="hero-title">Developer Based in London</div>
+                <div class="hero-description">
+                    I have a passion for creating exceptional digital experiences that bridge 
+                    technology with human needs, always considering the broader impact of our work.
+                </div>
+                <ul class="hero-interests">
+                    <li>global politics</li>
+                    <li>technology</li>
+                    <li>ethics</li>
+                    <li>photography <em>(I took this picture)</em></li>
+                </ul>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-glass">
+                        <i class="fas fa-eye"></i>
+                        Look at my work
+                    </a>
+                    <a href="#contact" class="btn-glass">
+                        <i class="fas fa-envelope"></i>
+                        Get in touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-background"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
+                <div class="about-text">
+                    <h2 class="about-title">About Me</h2>
+                    <p class="about-description">
+                        I'm a creative developer based in London, passionate about building 
+                        digital solutions that make a meaningful impact. My work spans across 
+                        modern web technologies, always with a focus on user experience and 
+                        ethical considerations.
+                    </p>
+                    <p class="about-description">
+                        When I'm not coding, you'll find me exploring the intersection of 
+                        technology and society, capturing moments through photography, 
+                        or staying informed about global political developments.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-glass">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-glass">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                        <div class="stat-glass">
+                            <span class="stat-number" data-count="25">0</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-photo.jpg" alt="About me" class="about-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="section-background"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <div class="section-title" data-aos="fade-up">Skills & Expertise</div>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Technologies and tools I work with to bring ideas to life
+            </div>
+            <div class="skills-grid" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">React</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Vue.js</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">TypeScript</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Backend Development</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">PostgreSQL</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Express.js</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Tools & Design</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Photography</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-level">Intermediate</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="section-background"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <div class="section-title" data-aos="fade-up">Featured Projects</div>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                A selection of my recent work and creative explorations
+            </div>
+            <div class="projects-grid" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            A modern e-commerce solution built with React and Node.js, 
+                            featuring real-time inventory management and secure payment processing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Data Visualization Dashboard</h3>
+                        <p class="project-description">
+                            Interactive dashboard for visualizing global political trends and 
+                            social media sentiment analysis with real-time data updates.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Photography Portfolio</h3>
+                        <p class="project-description">
+                            A minimalist photography portfolio showcasing landscape and 
+                            urban photography with a focus on storytelling through images.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GSAP</span>
+                            <span class="tech-tag">Photography</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ethics in Tech Blog</h3>
+                        <p class="project-description">
+                            A thought-provoking blog platform exploring the ethical implications 
+                            of technology in society, built with modern web standards.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Markdown</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-background"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <div class="section-title" data-aos="fade-up">Get In Touch</div>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Let's discuss how we can work together to create something meaningful
+            </div>
+            <div class="contact-content" data-aos="fade-up" data-aos-delay="400">
+                <div class="contact-info">
+                    <h3 class="contact-title">Let's Connect</h3>
+                    <p class="contact-description">
+                        I'm always interested in discussing new projects, creative ideas, 
+                        or opportunities to be part of something impactful. Whether you have 
+                        a project in mind or just want to chat about technology and ethics, 
+                        feel free to reach out.
+                    </p>
+                    <ul class="contact-details">
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>your.email@example.com</p>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+44 (0) 7XXX XXX XXX</p>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>London, United Kingdom</p>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>LinkedIn</h4>
+                                <p>linkedin.com/in/yourname</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2024 Your Name. All rights reserved. Made with passion in London.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/glass-script.js"></script>
+</body>
+</html>

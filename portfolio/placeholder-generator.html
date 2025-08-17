@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Generator</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: 'Space Grotesk', sans-serif; background: #0a0a0a; color: white; }
+        .placeholder { display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 16px; position: relative; overflow: hidden; }
+        .profile { width: 400px; height: 500px; background: linear-gradient(135deg, #ff6b35 0%, #ffa726 100%); }
+        .about { width: 600px; height: 400px; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border: 2px solid #333; }
+        .project { width: 400px; height: 280px; background: linear-gradient(135deg, #161616 0%, #2a2a2a 100%); border: 1px solid #333; }
+        .text { font-size: 18px; font-weight: 600; text-align: center; opacity: 0.8; }
+        .gradient-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(255,107,53,0.1) 0%, rgba(255,167,38,0.1) 100%); }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Placeholder Images</h1>
+    
+    <div class="placeholder profile">
+        <div class="gradient-overlay"></div>
+        <div class="text">Your Professional Photo<br><small>400×500px</small></div>
+    </div>
+    
+    <div class="placeholder about">
+        <div class="text">About Section Photo<br><small>600×400px</small></div>
+    </div>
+    
+    <div class="placeholder project">
+        <div class="text">Project Screenshot<br><small>400×280px</small></div>
+    </div>
+    
+    <div class="placeholder project">
+        <div class="text">Project Screenshot<br><small>400×280px</small></div>
+    </div>
+    
+    <div class="placeholder project">
+        <div class="text">Project Screenshot<br><small>400×280px</small></div>
+    </div>
+    
+    <div class="placeholder project">
+        <div class="text">Project Screenshot<br><small>400×280px</small></div>
+    </div>
+</body>
+</html>
