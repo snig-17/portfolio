@@ -26,7 +26,7 @@
         :root {
             --nav-bg: rgba(139, 131, 120, 0.8);
             --text-primary: #ffffff;
-            --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            --text-shadow: none
             --font-serif: 'Playfair Display', 'Times New Roman', serif;
             --font-sans: 'Poppins', 'Arial', sans-serif;
             --font-mono: 'Fira Code', 'Courier New', monospace;
@@ -804,7 +804,7 @@
             font-size: 0.75rem;
             font-weight: 500;
             color: rgba(255, 255, 255, 0.95);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            text-shadow: none;
             transition: all 0.2s ease;
         }
 
@@ -1235,7 +1235,7 @@
         .card-icon {
             font-size: 48px;
             color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            text-shadow: none;
         }
 
         .card-type {
@@ -1329,7 +1329,7 @@
             font-size: 0.75rem;
             font-weight: 500;
             color: rgba(255, 255, 255, 0.95);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            text-shadow: none;
             transition: all 0.2s ease;
         }
 
@@ -1371,7 +1371,7 @@
             font-size: 0.85rem;
             font-weight: 500;
             transition: all 0.3s ease;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            text-shadow: none;
         }
 
         .card-link:hover {
@@ -1621,7 +1621,7 @@
             max-width: 700px;
             margin: 0 auto;
             color: var(--text-primary);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: none;
             font-weight: 400;
             text-align: center;
             position: relative;
@@ -1937,55 +1937,8 @@
         <div class="timeline-container">
             <div class="timeline-header">
                 <h2 class="timeline-title">My Journey</h2>
-                <p class="timeline-subtitle">
-                    From international education to professional internships, each experience has shaped my perspective on technology, business, and global impact.
-                </p>
             </div>
-            
-            <div class="timeline">
-                <!-- Timeline Item 1: EY-Parthenon -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-icon">💼</div>
-                        <div class="timeline-date">April 2025</div>
-                        <div class="timeline-company">EY-Parthenon</div>
-                        <div class="timeline-role">Transaction Strategy and Execution (TSE) Team</div>
-                        <div class="timeline-location">📍 Bangalore, India</div>
-                        <div class="timeline-description">
-                            Collaborated with cross-functional teams to support M&A execution, focusing on operational due diligence and integration planning across multiple sectors. Conducted data analysis and contributed to client deliverables, aligning stakeholders on transaction priorities.
-                        </div>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">M&A Analysis</span>
-                            <span class="timeline-skill">Data Analysis</span>
-                            <span class="timeline-skill">Due Diligence</span>
-                            <span class="timeline-skill">Strategy</span>
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-
-                <!-- Timeline Item 2: Herbert Smith Freehills -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-icon">⚖️</div>
-                        <div class="timeline-date">March 2025 – April 2025</div>
-                        <div class="timeline-company">Herbert Smith Freehills</div>
-                        <div class="timeline-role">Digital Law Team Internship</div>
-                        <div class="timeline-location">📍 London, England</div>
-                        <div class="timeline-description">
-                            Researched legal issues in data privacy, AI, and digital regulation across UK and EU jurisdictions, supporting the Digital Law team with actionable insights. Drafted internal guidance notes and client-facing materials on evolving regulatory frameworks.
-                        </div>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">Data Privacy</span>
-                            <span class="timeline-skill">AI Regulation</span>
-                            <span class="timeline-skill">Legal Research</span>
-                            <span class="timeline-skill">GDPR</span>
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-
-                <!-- Timeline Item 3: Kode With Klossy -->
+             <!-- Timeline Item 1: Kode With Klossy -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-icon">📊</div>
@@ -2006,13 +1959,58 @@
                     <div class="timeline-dot"></div>
                 </div>
 
+            <div class="timeline">
+                <!-- Timeline Item 2: EY-Parthenon -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">💼</div>
+                        <div class="timeline-date">April 2025</div>
+                        <div class="timeline-company">EY-Parthenon</div>
+                        <div class="timeline-role">Internship, Transaction Strategy and Execution (TSE) Team</div>
+                        <div class="timeline-location">📍 Bangalore, India</div>
+                        <div class="timeline-description">
+                            Collaborated with cross-functional teams to support M&A execution, focusing on operational due diligence and integration planning across multiple sectors. Conducted data analysis and contributed to client deliverables, aligning stakeholders on transaction priorities.
+                        </div>
+                        <div class="timeline-skills">
+                            <span class="timeline-skill">M&A Analysis</span>
+                            <span class="timeline-skill">Data Analysis</span>
+                            <span class="timeline-skill">Due Diligence</span>
+                            <span class="timeline-skill">Strategy</span>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Timeline Item 3: Herbert Smith Freehills -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">⚖️</div>
+                        <div class="timeline-date">March 2025 – April 2025</div>
+                        <div class="timeline-company">Herbert Smith Freehills</div>
+                        <div class="timeline-role">Internship, Digital Law Team </div>
+                        <div class="timeline-location">📍 London, England</div>
+                        <div class="timeline-description">
+                            Researched legal issues in data privacy, AI, and digital regulation across UK and EU jurisdictions, supporting the Digital Law team with actionable insights. Drafted internal guidance notes and client-facing materials on evolving regulatory frameworks.
+                        </div>
+                        <div class="timeline-skills">
+                            <span class="timeline-skill">Data Privacy</span>
+                            <span class="timeline-skill">AI Regulation</span>
+                            <span class="timeline-skill">Legal Research</span>
+                            <span class="timeline-skill">GDPR</span>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+               
+
                 <!-- Timeline Item 4: UCL -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-icon">🎓</div>
                         <div class="timeline-date">September 2024 - July 2027</div>
                         <div class="timeline-company">University College London</div>
-                        <div class="timeline-role">BASc., Bachelor of Arts and Sciences</div>
+                        <div class="timeline-role">BASc. , Bachelor of Arts and Sciences</div>
                         <div class="timeline-location">📍 London, England</div>
                         <div class="timeline-description">
                             Major: Computer Science, Mathematics | Minor: Economics. Relevant coursework includes Logic, Computation and Language Theory; Algorithms, Logic and Structure; Mathematics for Arts and Science; Economics A; and Interdisciplinary Research Methods.
@@ -2032,11 +2030,11 @@
                     <div class="timeline-content">
                         <div class="timeline-icon">🔬</div>
                         <div class="timeline-date">IB Diploma Programme: 41/45</div>
-                        <div class="timeline-company">IB Extended Essay</div>
-                        <div class="timeline-role">World Studies Research</div>
-                        <div class="timeline-location">📍 International School, Bangalore</div>
+                        <div class="timeline-company">The International School, Bangalore</div>
+                        <div class="timeline-role">High School Diploma</div>
+                        <div class="timeline-location">📍  Bangalore, India</div>
                         <div class="timeline-description">
-                            "To what extent did the use of the k-NN algorithm affect the legitimacy of the 2016 Brexit referendum?" - Interdisciplinary research combining Global Politics & Computer Science methodologies to analyze algorithmic influence on democratic processes.
+                           Extended Essay: World Studies (Global Politics & Computer Science) – ‘To what extent did the use of the k-NN algorithm affect the legitimacy of the 2016 Brexit referendum?’
                         </div>
                         <div class="timeline-skills">
                             <span class="timeline-skill">k-NN Algorithm</span>
@@ -2147,7 +2145,7 @@
                     </div>
                 </div>
 
-                <!-- SmartFinance V2 -->
+                <!-- SmartFinance -->
                 <div class="glass-card extra-large">
                     <div class="card-header">
                         <div class="card-icon">📱</div>
@@ -2157,7 +2155,7 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">Smart Finance V2</h3>
+                        <h3 class="card-title">SmartFinance</h3>
                         <div class="card-subtitle">Secure Personal Finance iOS App</div>
                         <p class="card-description">
                             Production-ready iOS fintech app with biometric authentication, real-time transaction management, and Core Data persistence. Built with SwiftUI & MVVM architecture featuring NSDecimalNumber for financial precision.
@@ -2301,183 +2299,6 @@
                             <a href="#" class="card-link">
                                 <i class="fas fa-external-link-alt"></i>
                                 Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chessboard -->
-                <div class="glass-card small">
-                    <div class="card-header">
-                        <div class="card-icon">♟️</div>
-                        <div class="card-type">CSS Art</div>
-                        <div class="github-corner">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">CSS Chessboard</h3>
-                        <div class="card-subtitle">Pure CSS Implementation</div>
-                        <p class="card-description">
-                            HTML/CSS chessboard implementation showcasing CSS Grid layouts and creative styling techniques without JavaScript.
-                        </p>
-                        <div class="card-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS Grid</span>
-                            <span class="tech-tag">CSS Art</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/snig-17/chessboard" class="card-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CSS Flag -->
-                <div class="glass-card small">
-                    <div class="card-header">
-                        <div class="card-icon">🏁</div>
-                        <div class="card-type">CSS Art</div>
-                        <div class="github-corner">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">CSS Flag</h3>
-                        <div class="card-subtitle">Pure CSS Flag Creation</div>
-                        <p class="card-description">
-                            Creative CSS flag implementation demonstrating advanced CSS techniques and artistic problem-solving skills.
-                        </p>
-                        <div class="card-tech">
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">Creative Coding</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/snig-17/css-flag" class="card-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Colour Vocab -->
-                <div class="glass-card small">
-                    <div class="card-header">
-                        <div class="card-icon">🌈</div>
-                        <div class="card-type">Learning Tool</div>
-                        <div class="github-corner">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Colour Vocabulary</h3>
-                        <div class="card-subtitle">Interactive Learning Tool</div>
-                        <p class="card-description">
-                            HTML-based color vocabulary learning tool with interactive elements and engaging visual design for educational purposes.
-                        </p>
-                        <div class="card-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Education</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/snig-17/colour-vocab" class="card-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Birthday Invite -->
-                <div class="glass-card small">
-                    <div class="card-header">
-                        <div class="card-icon">🎂</div>
-                        <div class="card-type">Template</div>
-                        <div class="github-corner">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Birthday Invitation</h3>
-                        <div class="card-subtitle">HTML Template</div>
-                        <p class="card-description">
-                            Festive HTML birthday invitation template with responsive design and celebratory styling elements.
-                        </p>
-                        <div class="card-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">Template</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/snig-17/birthday-invite" class="card-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skills GitHub Pages -->
-                <div class="glass-card medium">
-                    <div class="card-header">
-                        <div class="card-icon">📄</div>
-                        <div class="card-type">Learning</div>
-                        <div class="github-corner">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">GitHub Pages Skills</h3>
-                        <div class="card-subtitle">GitHub Pages Exercise</div>
-                        <p class="card-description">
-                            Learning project for creating sites and blogs from GitHub repositories using GitHub Pages deployment and Jekyll static site generation.
-                        </p>
-                        <div class="card-tech">
-                            <span class="tech-tag">GitHub Pages</span>
-                            <span class="tech-tag">Jekyll</span>
-                            <span class="tech-tag">Static Site</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/snig-17/skills-github-pages" class="card-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- First Contributions -->
-                <div class="glass-card medium">
-                    <div class="card-header">
-                        <div class="card-icon">🤝</div>
-                        <div class="card-type">Open Source</div>
-                        <div class="github-corner">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">First Contributions</h3>
-                        <div class="card-subtitle">Open Source Learning</div>
-                        <p class="card-description">
-                            Fork of the popular First Contributions project - helping beginners make their first contribution to open source projects and learn Git workflow.
-                        </p>
-                        <div class="card-tech">
-                            <span class="tech-tag">Open Source</span>
-                            <span class="tech-tag">Git</span>
-                            <span class="tech-tag">Collaboration</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://github.com/snig-17/first-contributions" class="card-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                            <a href="https://firstcontributions.github.io" class="card-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Website
                             </a>
                         </div>
                     </div>
