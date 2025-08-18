@@ -485,7 +485,7 @@
             background-position: center;
             background-attachment: fixed;
             overflow: visible;
-            padding: 100px 40px 0px;
+            padding: 140px 40px 40px;
             margin: 0;
             z-index: 1;
         }
@@ -512,7 +512,7 @@
             background-position: center;
             background-attachment: fixed;
             overflow: visible;
-            padding: 100px 40px;
+            padding: 140px 40px 100px;
             margin: 0;
             z-index: 1;
         }
@@ -539,6 +539,7 @@
         .timeline-header {
             text-align: center;
             margin-bottom: 80px;
+            padding-top: 40px;
             position: relative;
             z-index: 2;
         }
@@ -1131,6 +1132,7 @@
         .projects-header {
             text-align: center;
             margin-bottom: 60px;
+            padding-top: 40px;
             position: relative;
             z-index: 2;
         }
@@ -1392,7 +1394,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 100px 40px;
+            padding: 140px 40px 100px;
             position: relative;
             margin: 0;
             background: 
@@ -1421,7 +1423,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 40px;
+            padding: 100px 40px 60px;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
                 url('https://page.gensparksite.com/v1/base64_upload/7da8ac1bb8cf61c52ab89b17b26f2087');
@@ -1454,12 +1456,18 @@
         }
 
         .social-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 600;
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 700;
             color: var(--text-primary);
             text-shadow: none;
             margin-bottom: 50px;
+            padding-top: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #e6f0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
         }
 
         .social-links {
