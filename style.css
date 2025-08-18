@@ -1,5 +1,22 @@
 
-        /* Inline CSS for immediate loading */
+
+/* Force html to also have no spacing */
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    line-height: 1 !important;
+    background: transparent !important;
+}
+
+/* Eliminate any possible spacing from root elements */
+html, body {
+    height: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+*/
         * {
             margin: 0;
             padding: 0;
@@ -223,7 +240,8 @@
             margin: 0;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-                url('https://page.gensparksite.com/v1/base64_upload/41d86736568f4acb0576c45e6eb29575');
+                
+                url('assets/C1D332D8-9F6A-4F68-8127-46BB87339C4A_1_105_c.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -463,7 +481,7 @@
             position: relative;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-                url('https://page.gensparksite.com/v1/base64_upload/a99b0450cc98bb1de8f8afecde31f7f5');
+                url('assets/CBF89250-371D-404A-B4E2-8460AD491DA6_1_105_c.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -490,7 +508,7 @@
             position: relative;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-                url('https://page.gensparksite.com/v1/base64_upload/f982c57316b68820349096e2b9ea8b6b');
+                url('assets/D213B68B-B8D2-4269-AA4F-341FA1EFDCC3_1_105_c.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -525,31 +543,6 @@
             padding-top: 40px;
             position: relative;
             z-index: 2;
-        }
-
-        .timeline-title {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            text-shadow: none;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #e6f0ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
-        }
-
-        .timeline-subtitle {
-            font-family: var(--font-sans);
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: none;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            font-weight: 400;
         }
 
         /* Timeline Layout */
@@ -1382,7 +1375,7 @@
             margin: 0;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-                url('https://page.gensparksite.com/v1/base64_upload/a99b0450cc98bb1de8f8afecde31f7f5');
+                url('assets/8C911BC3-FE84-4AC2-B462-EFB439B15FAA_1_105_c.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -1409,7 +1402,7 @@
             padding: 100px 40px 60px;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-                url('https://page.gensparksite.com/v1/base64_upload/7da8ac1bb8cf61c52ab89b17b26f2087');
+               
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -1582,13 +1575,6 @@
             z-index: 3;
         }
 
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-shadow: none;
-        }
 
         .section-text {
             font-size: 1.2rem;

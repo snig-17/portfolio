@@ -9,8 +9,12 @@
                     loadingScreen.style.display = 'none';
                 }, 1000);
             }, 2000);
-            
-            // Update timestamp
+              // Function to eliminate all gaps between sections
+    function eliminateWhiteSpace() {
+        // Get all sections
+        const sections = document.querySelectorAll('section, .hero, .about-section, .experience-section, .projects-section, .social-section');
+    }   
+        // Update timestamp
             function updateTimestamp() {
                 const now = new Date();
                 const options = {
