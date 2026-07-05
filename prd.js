@@ -20,7 +20,7 @@ function renderProjects() {
   const mount = document.getElementById("projectMounts");
   PROJECTS.forEach((p, i) => {
     const d = p.decision;
-    const card = el("section", "ship rise d2");
+    const card = el("section", "ship");
     card.innerHTML = `
       <div class="ship-head"><div>
         <div class="idx">SHIP 0${i + 1} / 0${PROJECTS.length}</div>
@@ -77,7 +77,7 @@ function wireBuilt(card) {
 function renderChangelog() {
   const mount = document.getElementById("changelogMount");
   CHANGELOG.forEach(c => {
-    const row = el("div", `rel rise ${c.upcoming ? "upcoming" : ""}`);
+    const row = el("div", `rel ${c.upcoming ? "upcoming" : ""}`);
     row.innerHTML = `<div class="ver">${c.ver === "edu" ? "edu" : c.ver}<br><span style="color:var(--faint)">${c.date}</span></div>
       <div><h4>${c.org}</h4><div class="role">${c.role} · ${c.loc}</div><div class="note">${c.note}</div></div>`;
     mount.appendChild(row);
