@@ -9,7 +9,6 @@ function setup() {
     elm.style.opacity = "0";
     inView(elm, () => { animate(elm, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7, ease: EASE }); }, { amount: 0.2 });
   });
-  hover(".choice", (e) => { animate(e, { y: -3 }, SPRING); return () => animate(e, { y: 0 }, SPRING); });
   hover(".appendix a", (e) => { animate(e, { y: -2 }, SPRING); return () => animate(e, { y: 0 }, SPRING); });
 }
 window.addEventListener("load", setup);
