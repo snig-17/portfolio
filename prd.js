@@ -1,4 +1,4 @@
-import { COPY, METRICS, PROJECTS, CHANGELOG } from "./prd.data.js";
+import { COPY, METRICS, PROJECTS, CHANGELOG, FIGURES } from "./prd.data.js";
 const root = document.documentElement;
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 export const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
@@ -14,7 +14,17 @@ function boot() {
   renderProjects();
   renderChangelog();
   renderAppendix();
+  renderFigures();
   requestAnimationFrame(() => document.body.classList.add("in"));
+}
+function renderFigures() {
+  FIGURES.forEach(f => {
+    const sec = document.getElementById(f.after);
+    if (!sec) return;
+    const fig = el("figure", "figure rise");
+    fig.innerHTML = `<img src="${f.src}" alt="${f.caption}" loading="lazy"><figcaption>${f.caption}</figcaption>`;
+    sec.after(fig);
+  });
 }
 function renderProjects() {
   const mount = document.getElementById("projectMounts");
