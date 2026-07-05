@@ -46,17 +46,8 @@
                 });
             });
             
-            // Glass cards interaction
-            document.querySelectorAll('.glass-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-12px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
+            // Glass card hover is handled by Framer Motion (see animations.js).
+
             // GitHub corner interaction
             document.querySelectorAll('.github-corner').forEach(icon => {
                 icon.addEventListener('click', function() {
@@ -96,26 +87,8 @@
                 }
             });
             
-            // Interactive Timeline Animation
-            const timelineObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        // Add staggered animation delay
-                        setTimeout(() => {
-                            entry.target.classList.add('animate');
-                        }, index * 200);
-                    }
-                });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            // Observe timeline items
-            document.querySelectorAll('.timeline-item').forEach(item => {
-                timelineObserver.observe(item);
-            });
-            
+            // Timeline item scroll reveal is handled by Framer Motion (see animations.js).
+
             // Timeline item click interaction
             document.querySelectorAll('.timeline-content').forEach(content => {
                 content.addEventListener('click', function() {
@@ -182,29 +155,8 @@
             `;
             document.head.appendChild(timelineActiveStyle);
             
-            // Animate glass cards on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const glassObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe glass cards with staggered animation
-            document.querySelectorAll('.glass-card').forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(50px)';
-                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                glassObserver.observe(card);
-            });
-            
-            
+            // Glass card scroll reveal + stagger is handled by Framer Motion (see animations.js).
+
+
         });
  

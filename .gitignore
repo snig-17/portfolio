@@ -1,0 +1,3 @@
+node_modules/
+.gstack/
+.claude/settings.local.json
