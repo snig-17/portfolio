@@ -88,10 +88,10 @@ body {
 .metaline .k { color: var(--muted); padding-left: 16px; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; }
 .metaline .k:first-child { padding-left: 0; }
 
-h1.title { font-family: var(--display); font-weight: 700; font-size: clamp(2.9rem, 8vw, 5rem);
-  line-height: 0.98; letter-spacing: -0.02em; margin: 4px 0 0; color: var(--ink); text-wrap: balance; }
+h1.title { font-family: var(--display); font-weight: 800; font-size: clamp(3.3rem, 9.5vw, 6.6rem);
+  line-height: 0.9; letter-spacing: -0.038em; margin: 6px 0 0; color: var(--ink); text-wrap: balance; }
 h1.title .u { color: var(--accent); }
-.draw { display: block; height: 2px; width: 72px; margin-top: 22px; background: var(--accent);
+.draw { display: block; height: 4px; width: 128px; margin-top: 26px; background: var(--accent);
   transform: scaleX(0); transform-origin: left; }
 .in .draw { animation: draw .7s .35s cubic-bezier(.6,0,.15,1) forwards; }
 @keyframes draw { to { transform: scaleX(1); } }
@@ -111,17 +111,18 @@ h1.title .u { color: var(--accent); }
 .statusval.swap { opacity: 0; }
 
 /* ---- section labels ---- */
-.section-label { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--muted); display: flex; align-items: baseline; gap: 12px; margin: 68px 0 22px;
-  padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
-.section-label .n { color: var(--accent); font-weight: 600; }
+.section-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); display: flex; align-items: baseline; gap: 16px; margin: 76px 0 24px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+.section-label .n { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800;
+  color: var(--accent); letter-spacing: -0.03em; line-height: 0.7; }
 
 /* ---- metrics: ruled data table ---- */
 .metrics { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule); }
 .metric { padding: 20px 18px 22px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
 .metric:nth-child(3n) { border-right: 0; }
-.metric .v { font-family: var(--display); font-weight: 600; font-size: clamp(1.7rem, 4.6vw, 2.4rem);
-  line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--ink); }
+.metric .v { font-family: var(--display); font-weight: 800; font-size: clamp(2.1rem, 5.8vw, 3.2rem);
+  line-height: 0.95; letter-spacing: -0.035em; font-variant-numeric: tabular-nums; color: var(--ink); }
 .metric.eng .v { color: var(--accent); }
 .metric .l { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.03em;
   color: var(--muted); margin-top: 10px; line-height: 1.5; }
@@ -132,8 +133,8 @@ h1.title .u { color: var(--accent); }
 .ship-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap;
   border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
 .ship-head .idx { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-.ship h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.1rem); margin: 8px 0 3px;
-  letter-spacing: -0.015em; color: var(--ink); }
+.ship h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 5.2vw, 2.9rem); margin: 8px 0 3px;
+  letter-spacing: -0.03em; color: var(--ink); }
 .ship .sub { color: var(--muted); font-size: 0.95rem; font-family: var(--body); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 .tag { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em;
@@ -144,7 +145,7 @@ h1.title .u { color: var(--accent); }
   display: flex; gap: 10px; align-items: flex-start; }
 .constraint .lab { color: var(--accent); white-space: nowrap; font-weight: 600; }
 
-.prompt { font-family: var(--display); font-weight: 600; font-size: 1.3rem; color: var(--ink); margin: 20px 0 4px; line-height: 1.25; }
+.prompt { font-family: var(--display); font-weight: 700; font-size: clamp(1.45rem, 3.2vw, 1.85rem); color: var(--ink); margin: 22px 0 4px; line-height: 1.18; letter-spacing: -0.02em; }
 .prompt-hint { font-family: var(--mono); font-size: 11.5px; color: var(--faint); margin-bottom: 18px; }
 
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
@@ -177,7 +178,7 @@ h1.title .u { color: var(--accent); }
 .verdict { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ok);
   display: flex; align-items: center; gap: 9px; padding-top: 20px; border-top: 1px solid var(--rule); }
 .verdict .box { width: 14px; height: 14px; border: 1px solid var(--ok); display: inline-flex; align-items: center; justify-content: center; color: var(--ok); font-size: 9px; }
-.reveal h3 { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin: 14px 0 8px; color: var(--ink); letter-spacing: -0.01em; }
+.reveal h3 { font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 3.4vw, 2rem); margin: 16px 0 10px; color: var(--ink); letter-spacing: -0.025em; line-height: 1.05; }
 .reveal p { font-family: var(--body); color: var(--ink-2); margin: 0 0 16px; font-size: 1.02rem; line-height: 1.6; }
 .reveal p em { font-style: normal; color: var(--ink); box-shadow: inset 0 -0.5em 0 var(--accent-soft); }
 .outcome { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -203,8 +204,8 @@ h1.title .u { color: var(--accent); }
 .rel .note { color: var(--ink-2); font-size: 0.95rem; margin-top: 8px; font-family: var(--body); line-height: 1.55; }
 
 /* ---- roadmap ---- */
-.roadmap { font-family: var(--display); font-weight: 500; font-size: clamp(1.3rem, 3vw, 1.7rem); color: var(--ink-2);
-  max-width: 24ch; line-height: 1.28; letter-spacing: -0.01em; max-width: 30ch; }
+.roadmap { font-family: var(--display); font-weight: 600; font-size: clamp(1.7rem, 4.2vw, 2.7rem); color: var(--ink);
+  max-width: 26ch; line-height: 1.12; letter-spacing: -0.025em; }
 .roadmap em { font-style: normal; color: var(--ink); box-shadow: inset 0 -0.5em 0 var(--accent-soft); }
 
 /* ---- appendix ---- */
