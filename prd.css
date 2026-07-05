@@ -116,7 +116,7 @@
   .section-label::before { content: ""; width: 26px; height: 1px; background: var(--accent); }
   .section-label .n { color: var(--faint); }
 
-  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .metric { border: 1px solid var(--line); border-radius: 16px; padding: 16px 15px; background: var(--panel);
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
   .metric .v { font-family: var(--serif); font-weight: 600; font-size: clamp(1.5rem, 4.4vw, 2.15rem); line-height: 1;
