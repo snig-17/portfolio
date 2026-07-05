@@ -1,4 +1,4 @@
-import { COPY, METRICS } from "./prd.data.js";
+import { COPY, METRICS, PROJECTS } from "./prd.data.js";
 const root = document.documentElement;
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 export const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
@@ -11,7 +11,66 @@ function boot() {
   document.getElementById("roadmapCopy").innerHTML = COPY.roadmap;
   initTheme(); initStatus(); initSmoothScroll();
   renderMetrics();
+  renderProjects();
   requestAnimationFrame(() => document.body.classList.add("in"));
+}
+function renderProjects() {
+  const mount = document.getElementById("projectMounts");
+  PROJECTS.forEach((p, i) => {
+    const d = p.decision;
+    const card = el("section", "ship rise d2");
+    card.innerHTML = `
+      <div class="ship-head"><div>
+        <div class="idx">SHIP 0${i + 1} / 0${PROJECTS.length}</div>
+        <h2>${p.name}</h2><div class="sub">${p.sub}</div>
+      </div><div class="idx">${p.date}</div></div>
+      <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+      <div class="constraint"><span class="lab">CONSTRAINT ▸</span><span>${d.constraint}</span></div>
+      <p class="prompt">${d.prompt}</p>
+      <p class="prompt-hint">// make the call before you scroll — then see mine</p>
+      <div class="choices">${d.options.map(o => `
+        <button class="choice" data-opt="${o.id}" ${o.mine ? 'data-mine="1"' : ""}>
+          <span class="yours">your call</span><span class="hers">I chose this</span>
+          <span class="opt">OPTION ${o.id}</span><span class="txt">${o.text}</span>
+          <div class="bar"><i></i></div><div class="pct"></div>
+        </button>`).join("")}</div>
+      <div class="reveal">
+        <div class="verdict"><span class="box">✓</span> DECISION LOGGED · my actual call</div>
+        <h3 class="revealHead">${d.verdict.headline}</h3>
+        <p>${d.verdict.reasoning}</p>
+        <div class="outcome">${d.verdict.badges.map(b => `<span class="badge ${b.win ? "win" : ""}">${b.text}</span>`).join("")}</div>
+      </div>
+      <button class="built-toggle" aria-expanded="false">▸ How it's built</button>
+      <div class="built">${p.built}</div>`;
+    wireDecision(card, d);
+    wireBuilt(card);
+    mount.appendChild(card);
+  });
+}
+function wireDecision(card, d) {
+  const choices = card.querySelector(".choices"), reveal = card.querySelector(".reveal"), head = card.querySelector(".revealHead");
+  let voted = false;
+  choices.querySelectorAll(".choice").forEach(c => c.addEventListener("click", () => {
+    if (voted) return; voted = true; choices.classList.add("voted");
+    const picked = c.dataset.opt; c.classList.add("picked");
+    choices.querySelectorAll(".choice").forEach(ch => {
+      const s = d.readerSplit[ch.dataset.opt];
+      ch.querySelector(".bar i").style.width = s + "%";
+      ch.querySelector(".pct").textContent = s + "% of readers";
+      if (ch.dataset.mine) ch.classList.add("mine");
+    });
+    const mine = d.options.find(o => o.mine).id;
+    head.textContent = picked === mine ? "Same call I made — " + d.verdict.headline : "I went the other way — " + d.verdict.headline;
+    setTimeout(() => reveal.classList.add("open"), 260);
+  }));
+}
+function wireBuilt(card) {
+  const btn = card.querySelector(".built-toggle"), panel = card.querySelector(".built");
+  btn.addEventListener("click", () => {
+    const open = panel.classList.toggle("open");
+    btn.setAttribute("aria-expanded", String(open));
+    btn.textContent = (open ? "▾" : "▸") + " How it's built";
+  });
 }
 function renderCover() {
   const c = document.getElementById("cover");
