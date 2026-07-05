@@ -1,140 +1,107 @@
 ---
 name: portfolio-design
-description: Design system for Snigdha Tiwari's portfolio — glass morphism over iOS-gradient palette, Playfair/Poppins type, 8px spacing grid, Framer Motion motion. Read this BEFORE building or restyling any UI (sections, cards, buttons, forms) so components stay consistent instead of drifting to generic defaults.
+description: Design system for Snigdha Tiwari's portfolio — a flat editorial "ink-on-paper spec". Hairline rules, disciplined grid, one deliberate editorial-red accent, Bricolage Grotesque + Newsreader + JetBrains Mono. Read this BEFORE building or restyling any UI so components stay consistent and DON'T drift back to the old glassy/AI look.
 ---
 
-# Portfolio Design System
+# Portfolio Design System — Editorial Spec
 
-This is a **glass-morphism** portfolio: frosted translucent surfaces floating over
-full-bleed personal photography, tinted with an iOS gradient accent palette. Every
-new component must read as part of this system, not a bolted-on default.
+The portfolio is a **flat, editorial, ink-on-paper technical spec**. It should read like a beautifully typeset document (annual report / redlined PRD), not a glowing SaaS page. This system deliberately **replaced** an earlier glass-morphism version that read as AI-generated — do not reintroduce those patterns (see §7).
 
-Tokens live in `:root` at the top of `style.css`. Prefer the CSS variables below over
-raw values. Never invent new hex codes, blur radii, or radii — reuse these.
+Tokens live in `:root` at the top of `prd.css`. Prefer the CSS variables over raw values. All colors below are WCAG-AA verified on their ground.
 
 ---
 
 ## 1. Color tokens
 
-**iOS accent gradient palette** (use for gradients, hovers, active states, dots — never large flat fills):
+Flat. No gradients, no blur, no glow. One accent: **editorial red** (the "redline markup on a reviewed spec" idea). Used sparingly.
 
-| Token | Hex | Role |
-|-------|-----|------|
-| Blue | `#007AFF` | primary accent, links, focus |
-| Indigo | `#5856D6` | gradient mid-stop |
-| Purple | `#AF52DE` | gradient stop |
-| Pink | `#FF2D92` | active / hot accent |
-| Orange | `#FF6B35` | active / warm accent |
+**Light (default):**
+| Token | Value | Role |
+|-------|-------|------|
+| `--paper` | `#FAFAF8` | warm near-white ground |
+| `--paper-2` | `#F1EFE9` | subtle raised fill (hover) |
+| `--ink` | `#1A1815` | headings, primary |
+| `--ink-2` | `#46433D` | body text |
+| `--muted` | `#6B675F` | labels, captions |
+| `--faint` | `#767268` | quietest text (still AA: 4.6:1) |
+| `--rule` | `rgba(26,24,21,0.16)` | hairlines |
+| `--rule-strong` | `rgba(26,24,21,0.32)` | borders |
+| `--accent` | `#C6362A` | editorial red (5.1:1) |
+| `--accent-soft` | `rgba(198,54,42,0.09)` | red tint fills |
+| `--ok` | `#3B7A4B` | verdict/success |
 
-Accent gradients run diagonally: `linear-gradient(135deg, #FF2D92 0%, #FF6B35 100%)`
-for active states, or blue→purple for calmer ones.
+**Dark:** `--paper #151412` · `--ink #ECEAE3` · `--ink-2 #B8B4AB` · `--muted #928D82` · `--faint #847F74` · `--accent #E5604D` (5.4:1) · `--ok #6BAF7A`. Defined at token level under `@media (prefers-color-scheme: dark)` and `:root[data-theme="dark"]` / `[data-theme="light"]`. Both themes get equal care; `color-scheme` is set per theme.
 
-**Glass surface scale** — translucent white over photography. Pick opacity by elevation:
-
-| Use | Value |
-|-----|-------|
-| Resting card / panel | `rgba(255,255,255,0.15)` |
-| Hover / raised card | `rgba(255,255,255,0.22)` |
-| Border (resting) | `rgba(255,255,255,0.20)` |
-| Border (hover) | `rgba(255,255,255,0.30)` |
-| Inner top highlight | `inset 0 1px 0 rgba(255,255,255,0.3)` |
-
-**Text** — this is a dark-photo theme, so text is white:
-- `--text-primary: #ffffff` for everything on glass/photo.
-- `--text-shadow: none` (the blur backing gives contrast; don't add drop shadows).
-- Never use dark body text on the photo backgrounds.
+**Accent discipline:** red appears on the `think` word, §-numerals, the `CONSTRAINT` label, the author's-pick marker, `upcoming` tags, links-on-hover, and the win badge. Everything else is ink-on-paper. Do not spread it.
 
 ---
 
 ## 2. Typography
 
-Three families, already loaded via Google Fonts. Use the variables, not literal names.
+Three roles, three families. No Playfair, no Poppins, no Inter, no system-ui-as-display.
 
 | Variable | Family | Use for |
 |----------|--------|---------|
-| `--font-serif` | Playfair Display | Display headings, card titles, section headers — the editorial voice |
-| `--font-sans` / `--font-display` | Poppins | Body copy, UI labels, buttons, nav |
-| `--font-mono` | Fira Code | Timestamps, code, tech tags, anything "data" |
+| `--display` | **Bricolage Grotesque** (700–800) | headlines, project names, §-numerals, metric numbers, prompts, verdicts, roadmap — the loud voice |
+| `--body` | **Newsreader** (serif, 400–500) | running prose: thesis, problem/context, decision reasoning, notes — gives the document feel |
+| `--mono` | **JetBrains Mono** | all spec chrome: metadata, labels, tags, constraints, section labels, dates, badges |
 
 Rules:
-- **Headings** → `--font-serif`, weight 500–700. Use `clamp()` for fluid sizing (e.g. `clamp(1.3rem, 3vw, 1.8rem)`), matching `.about-section .section-text`.
-- **Body** → `--font-sans`, weight 300–400, `line-height: 1.8` for long text.
-- **Metadata / tags** → `--font-mono`.
-- Don't introduce a fourth typeface or use system-ui.
+- **Scale contrast is the energy.** Display goes big and tight (headline up to ~6.6rem, weight 800, `letter-spacing: -0.03em`, `line-height: ~0.9`). Don't make everything mid-sized — the drama is in the jump between huge display and calm serif body.
+- **Body is a serif**, ~18px, `line-height: 1.6`, measure ≤ ~62ch. Reads like an article.
+- **Mono is uppercase** for labels/chrome with `letter-spacing: ~0.05em`. Tabular-nums on figures.
+- Emphasis in prose: `em` → a red-tint highlight (`box-shadow: inset 0 -0.5em 0 var(--accent-soft)`), not italic.
 
 ---
 
-## 3. Spacing — 8px grid
+## 3. Layout & structure
 
-Base unit is **8px**. Compose spacing from the scale; the existing layout leans on the
-starred values, so prefer those when matching surrounding code:
-
-`4 · 8 · 12 · 16 · 20★ · 24 · 30★ · 40★ · 60 · 80★ · 100`
-
-- Card inner padding: `30px`. Grid gaps: `30px`. Section rhythm: `80px`.
-- When in doubt, round to the nearest multiple of 8 rather than picking an arbitrary value.
+- **Flat on paper.** No cards floating on blur. Blocks are separated by whitespace and **hairline rules** (`1px solid var(--rule)`), the core editorial device.
+- **Disciplined single column**, `--maxw: 820px`, generous margins. Rhythm varies by section (huge cover, dense decision blocks, bold data band, sparse roadmap) — not uniform.
+- **Sharp radius.** Blocks `3px`, tags/chips `2px`. **Never** the old bubbly 20px / 999px pills.
+- **Section headers:** giant red `§N` display numeral + small mono label, over a heavy ink rule (`border-bottom: 2px solid var(--ink)`). This is the signature wayfinding device.
+- **8px-ish spacing rhythm**, but editorial whitespace is generous — sections breathe (`margin: ~76px` between).
 
 ---
 
-## 4. The glass component recipe
+## 4. Component patterns
 
-Every card / panel / floating surface is built from this exact recipe. Copy it; don't
-approximate:
-
-```css
-background: rgba(255, 255, 255, 0.15);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);   /* always pair for Safari */
-border: 1px solid rgba(255, 255, 255, 0.2);
-border-radius: 20px;
-box-shadow:
-  0 8px 32px rgba(0, 0, 0, 0.15),
-  0 4px 16px rgba(0, 0, 0, 0.1),
-  inset 0 1px 0 rgba(255, 255, 255, 0.3);  /* top highlight = the "glass" tell */
-overflow: hidden;
-position: relative;
-```
-
-**Blur scale:** `20px` for primary cards, `10px` for nav / smaller chrome. Don't go
-above 20px (perf + it stops reading as glass).
-
-**Radius scale:** `20px` cards · `12–16px` inner elements · `50%` dots/avatars. No sharp
-0px corners on surfaces.
-
-**Elevation on hover:** raise the surface (`translateY(-10px) scale(1.02)`), bump bg to
-`0.22`, border to `0.30`, and deepen the shadow. See `.glass-card:hover`.
+- **Chips/tags/status:** bordered rectangles (`1px var(--rule)`/`--rule-strong`, radius 2px), mono uppercase, no fill. A tiny rotated-square (`◆`) marker, not a round dot.
+- **Constraint callout:** red left-border + `--accent-soft` tint + mono. The "redline" moment.
+- **Decision choices:** a bordered grid of cells split by a hairline (not separate rounded cards). Author's pick = `--accent-soft` fill + red `I CHOSE THIS` chip. Reader-split bars are 2px rules.
+- **Metrics = a ruled data band:** `repeat(3,1fr)` grid with hairline cell dividers, big display numbers (engineering figures in red), mono labels. No card fills.
+- **Changelog = ruled release history:** `120px` mono version column + serif content, hairline row separators. `upcoming` appends a red `· upcoming`.
+- **Figures:** hairline border, mono caption over a top rule, minimal radius.
+- **Buttons/links:** border + color shift to red on hover/focus. Visible `:focus-visible` (2px red outline) on every interactive element.
 
 ---
 
-## 5. Motion — Framer Motion (vanilla DOM API)
+## 5. Motion
 
-All JS-driven animation goes through Framer Motion's vanilla API, self-hosted at
-`assets/framer-motion.dom.js` and wired in `animations.js`. Do **not** add React or a
-second animation library, and don't re-implement reveals with raw IntersectionObserver
-(that job now belongs to `animations.js`).
-
-- **Scroll reveals** → `inView(el, () => animate(el, { opacity:[0,1], y:[..,0] }, { ease: EASE }))`.
-- **Staggered groups** → `animate(nodes, {...}, { delay: stagger(0.12) })`.
-- **Hover** → `hover(sel, el => { animate(el, {y,scale}, SPRING); return () => animate(el,{y:0,scale:1}, SPRING) })`.
-- **Shared constants:** `EASE = [0.25, 0.46, 0.45, 0.94]` (matches the CSS cubic-bezier);
-  `SPRING = { type:"spring", stiffness:300, damping:22, mass:0.6 }`.
-- CSS transitions use `--transition-smooth: 0.8s cubic-bezier(0.25,0.46,0.45,0.94)` — keep
-  new CSS transitions on that same curve so motion feels uniform.
-- Always guard with `prefers-reduced-motion` (skip motion, hide nothing).
+Restrained. Purpose over flourish.
+- **Subtle scroll reveals** (`.rise` fade+rise; `.ship`/`.rel` via Framer Motion `inView`). Framer Motion vanilla-DOM API only, self-hosted at `assets/framer-motion.dom.js` — see `[[framer-motion-vanilla]]`.
+- **Spec-boot loader** (`fx.js`): a mono terminal sequence on flat paper, then a fade. On-concept.
+- **Scroll-progress rule:** a thin solid red line at the top.
+- **No** particle/network canvas, **no** 3D card tilt, **no** gradient sweeps — those were removed as flashy tells.
+- Full `prefers-reduced-motion` support: skip motion, hide nothing (content is visible without JS/motion).
 
 ---
 
-## 6. Avoid the generic AI aesthetic
+## 6. Voice / copy
 
-This site has a specific point of view. When adding UI, do **not** default to:
+Truthful spec language. No fabricated credentials (an earlier "Reviewers: 3 approved" pill was cut for reading as fake). No happy-talk. Mono metadata states facts (`OWNER:`, `STATUS: Open to 2027 grad roles`, `FORMAT: living spec`). Active voice.
 
-- ❌ Flat opaque cards with a hard 1px gray border and no blur — everything floating is glass.
-- ❌ Purple-on-white SaaS gradients, or the default Tailwind indigo. Use the iOS palette above.
-- ❌ System-ui / Inter for headings — headings are **Playfair Display**.
-- ❌ Dark text on the photo backgrounds, or adding text-shadows to compensate.
-- ❌ Uniform 16px everything — use the 8px scale with the section rhythm (30/80).
-- ❌ Bouncy overshoot easing or 300ms "pop" everywhere — motion is slow and smooth (0.6–0.9s, the shared cubic-bezier / gentle spring).
-- ❌ Sharp 0-radius corners on surfaces, or drop-shadowed icons.
+---
 
-**Do** lead with: full-bleed photography, frosted glass panels, the inset top highlight,
-editorial serif headings, and calm scroll-triggered reveals.
+## 7. Do NOT reintroduce (the old AI look)
+
+This system exists *because* the previous one read as AI-generated. Never bring back:
+- ❌ Glass morphism / `backdrop-filter: blur` panels
+- ❌ Blue→indigo→purple→pink gradient accents (or gradient text)
+- ❌ Particle / constellation / floating-dots backgrounds
+- ❌ Radial mesh-gradient blobs behind content
+- ❌ Uniform bubbly radius (20px cards, 999px pills)
+- ❌ Playfair Display, Poppins, Inter, or system-ui as display/body
+- ❌ Drop-shadow "elevation" stacks on flat content
+
+**Do** lead with: flat paper, hairline rules, big grotesque display against calm serif body, one deliberate red accent, and scale contrast for energy. Related: `[[framer-motion-vanilla]]`, `[[portfolio-redesign-direction]]`.
