@@ -1,4 +1,4 @@
-import { COPY } from "./prd.data.js";
+import { COPY, METRICS } from "./prd.data.js";
 const root = document.documentElement;
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 export const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
@@ -10,6 +10,7 @@ function boot() {
   document.getElementById("contextCopy").innerHTML = COPY.context;
   document.getElementById("roadmapCopy").innerHTML = COPY.roadmap;
   initTheme(); initStatus(); initSmoothScroll();
+  renderMetrics();
   requestAnimationFrame(() => document.body.classList.add("in"));
 }
 function renderCover() {
@@ -45,6 +46,24 @@ function initStatus() {
   const sv = document.getElementById("statusVal");
   if (reduce) { sv.textContent = COPY.statusTo; return; }
   setTimeout(() => { sv.classList.add("swap"); setTimeout(() => { sv.textContent = COPY.statusTo; sv.classList.remove("swap"); }, 240); }, 1000);
+}
+function renderMetrics() {
+  const mount = document.getElementById("metricMount");
+  METRICS.forEach((m, i) => {
+    const tile = el("div", `metric rise d${(i % 5) + 1} ${m.kind === "eng" ? "eng" : ""}`);
+    tile.innerHTML = `<div class="v" data-to="${m.value}" data-prefix="${m.prefix||""}" data-suffix="${m.suffix||""}">0</div><div class="l">${m.label.replace(/\n/g,"<br>")}</div>`;
+    mount.appendChild(tile);
+  });
+  const seen = new WeakSet();
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting && !seen.has(en.target)) { seen.add(en.target); countUp(en.target); } }), { threshold: 0.6 });
+  mount.querySelectorAll(".v").forEach(v => io.observe(v));
+}
+function countUp(elm) {
+  const to = +elm.dataset.to, pre = elm.dataset.prefix || "", suf = elm.dataset.suffix || "";
+  if (reduce) { elm.textContent = pre + to.toLocaleString() + suf; return; }
+  let start = null; const dur = 1300;
+  const step = ts => { if (!start) start = ts; const p = Math.min((ts - start) / dur, 1); const e = 1 - Math.pow(1 - p, 3); elm.textContent = pre + Math.round(to * e).toLocaleString() + suf; if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
 }
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
