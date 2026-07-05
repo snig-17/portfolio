@@ -19,6 +19,9 @@
 
 </head>
 <body>
+  <canvas id="netbg" aria-hidden="true"></canvas>
+  <div id="scrollrail" aria-hidden="true"><i></i></div>
+  <div id="loader" aria-hidden="true"><div class="boot"><pre class="bootlog"></pre><span class="cursor">▋</span></div></div>
   <div class="topbar">
     <div><span class="doc-id">PRD-2026-STIWARI</span><span class="dot">·</span><span id="verStamp"></span><span class="dot">·</span>internal draft</div>
     <button class="toggle" id="themeBtn" aria-label="Toggle colour theme"><span id="themeIcon">◐</span> <span id="themeLbl">theme</span></button>
@@ -40,5 +43,6 @@
   </main>
   <script type="module" src="prd.js"></script>
   <script type="module" src="animations.js"></script>
+  <script type="module" src="fx.js"></script>
 </body>
 </html>
