@@ -1,4 +1,4 @@
-import { COPY, METRICS, PROJECTS } from "./prd.data.js";
+import { COPY, METRICS, PROJECTS, CHANGELOG } from "./prd.data.js";
 const root = document.documentElement;
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 export const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
@@ -12,6 +12,8 @@ function boot() {
   initTheme(); initStatus(); initSmoothScroll();
   renderMetrics();
   renderProjects();
+  renderChangelog();
+  renderAppendix();
   requestAnimationFrame(() => document.body.classList.add("in"));
 }
 function renderProjects() {
@@ -71,6 +73,25 @@ function wireBuilt(card) {
     btn.setAttribute("aria-expanded", String(open));
     btn.textContent = (open ? "▾" : "▸") + " How it's built";
   });
+}
+function renderChangelog() {
+  const mount = document.getElementById("changelogMount");
+  CHANGELOG.forEach(c => {
+    const row = el("div", `rel rise ${c.upcoming ? "upcoming" : ""}`);
+    row.innerHTML = `<div class="ver">${c.ver === "edu" ? "edu" : c.ver}<br><span style="color:var(--faint)">${c.date}</span></div>
+      <div><h4>${c.org}</h4><div class="role">${c.role} · ${c.loc}</div><div class="note">${c.note}</div></div>`;
+    mount.appendChild(row);
+  });
+}
+function renderAppendix() {
+  const mount = document.getElementById("appendixMount");
+  const links = [
+    { href: COPY.resumeUrl, txt: "↧ Résumé (PDF)" },
+    { href: "https://linkedin.com/in/snigdha-tiwari", txt: "in/snigdha-tiwari" },
+    { href: "https://github.com/snig-17", txt: "@snig-17" },
+    { href: "mailto:snigdha.tiwari.24@ucl.ac.uk", txt: "snigdha.tiwari.24@ucl.ac.uk" },
+  ];
+  links.forEach(l => { const a = el("a"); a.href = l.href; a.textContent = l.txt; if (l.href.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; } mount.appendChild(a); });
 }
 function renderCover() {
   const c = document.getElementById("cover");
