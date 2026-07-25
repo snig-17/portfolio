@@ -6,12 +6,17 @@ export const el = (tag, cls, html) => { const n = document.createElement(tag); i
 function boot() {
   document.getElementById("verStamp").textContent = COPY.version;
   renderCover();
+  document.getElementById("tldrCopy").innerHTML = COPY.tldr;
   document.getElementById("problemCopy").innerHTML = COPY.problem;
   document.getElementById("contextCopy").innerHTML = COPY.context;
+  document.getElementById("metricsLeadCopy").innerHTML = COPY.metricsLead;
   document.getElementById("roadmapCopy").innerHTML = COPY.roadmap;
   initTheme(); initStatus(); initSmoothScroll();
+  renderTwoCol("goalsMount", "Goals", COPY.goals, "Non-goals", COPY.nonGoals);
+  renderTwoCol("scopeMount", "In scope", COPY.scopeIn, "Out of scope", COPY.scopeOut);
   renderMetrics();
   renderProjects();
+  renderOpenQuestions();
   renderChangelog();
   renderAppendix();
   renderFigures();
@@ -26,17 +31,50 @@ function renderFigures() {
     sec.after(fig);
   });
 }
+function renderTwoCol(mountId, posTitle, posItems, negTitle, negItems) {
+  const mount = document.getElementById(mountId);
+  const col = (cls, title, items, listCls) =>
+    `<div class="speccol ${cls}"><h3>${title}</h3><ul class="speclist ${listCls}">${items.map(i => `<li>${i}</li>`).join("")}</ul></div>`;
+  mount.innerHTML = col("pos", posTitle, posItems, "pos") + col("neg", negTitle, negItems, "neg");
+}
+function renderOpenQuestions() {
+  const mount = document.getElementById("openqMount");
+  COPY.openQuestions.forEach((q, i) => {
+    const li = el("li");
+    li.innerHTML = `<span class="q">Q${i + 1}</span><span>${q}</span>`;
+    mount.appendChild(li);
+  });
+}
+function projectHead(p, i) {
+  return `
+    <div class="ship-head"><div>
+      <div class="idx">SHIP 0${i + 1} / 0${PROJECTS.length}</div>
+      <h2>${p.name}</h2><div class="sub">${p.sub}</div>
+    </div><div class="idx">${p.date}</div></div>
+    <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>`;
+}
 function renderProjects() {
   const mount = document.getElementById("projectMounts");
   PROJECTS.forEach((p, i) => {
-    const d = p.decision;
     const card = el("section", "ship");
-    card.innerHTML = `
-      <div class="ship-head"><div>
-        <div class="idx">SHIP 0${i + 1} / 0${PROJECTS.length}</div>
-        <h2>${p.name}</h2><div class="sub">${p.sub}</div>
-      </div><div class="idx">${p.date}</div></div>
-      <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+    if (p.kind === "teardown") {
+      const f = p.finding;
+      card.innerHTML = projectHead(p, i) + `
+        <div class="constraint"><span class="lab">SELF-DIRECTED ▸</span><span>${p.brief}</span></div>
+        <div class="finding">
+          <div class="lab"><span class="box">✓</span> FINDING · what I took away</div>
+          <h3>${f.headline}</h3>
+          <p>${f.reasoning}</p>
+          <div class="outcome">${f.badges.map(b => `<span class="badge ${b.win ? "win" : ""}">${b.text}</span>`).join("")}</div>
+        </div>
+        <button class="built-toggle" aria-expanded="false">▸ How it's built</button>
+        <div class="built">${p.built}</div>`;
+      wireBuilt(card);
+      mount.appendChild(card);
+      return;
+    }
+    const d = p.decision;
+    card.innerHTML = projectHead(p, i) + `
       <div class="constraint"><span class="lab">CONSTRAINT ▸</span><span>${d.constraint}</span></div>
       <p class="prompt">${d.prompt}</p>
       <p class="prompt-hint">// make the call before you scroll — then see mine</p>
@@ -96,7 +134,6 @@ function renderChangelog() {
 function renderAppendix() {
   const mount = document.getElementById("appendixMount");
   const links = [
-    { href: COPY.resumeUrl, txt: "↧ Résumé (PDF)" },
     { href: "https://www.linkedin.com/in/snigdha-tiwari-0b6227251/", txt: "in/snigdha-tiwari" },
     { href: "https://github.com/snig-17", txt: "@snig-17" },
     { href: "mailto:snigdha.tiwari.24@ucl.ac.uk", txt: "snigdha.tiwari.24@ucl.ac.uk" },

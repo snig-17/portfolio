@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-07-25",
+  "observability": { "enabled": true },
+  // Static site: serve the repo root, but exclude dev/meta files via .assetsignore
+  // (notably node_modules/, which holds files far larger than the 25 MiB asset cap).
+  "assets": { "directory": "." }
+}

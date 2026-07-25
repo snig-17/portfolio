@@ -208,6 +208,51 @@ h1.title .u { color: var(--accent); }
   max-width: 26ch; line-height: 1.12; letter-spacing: -0.025em; }
 .roadmap em { font-style: normal; color: var(--ink); box-shadow: inset 0 -0.5em 0 var(--accent-soft); }
 
+/* ---- TL;DR summary callout ---- */
+.tldr { border: 1px solid var(--rule-strong); border-left: 3px solid var(--accent); border-radius: 3px;
+  background: var(--paper); padding: 20px 22px; margin: 40px 0 4px; }
+.tldr .lab { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--accent); display: block; margin-bottom: 10px; }
+.tldr p { margin: 0; font-family: var(--body); font-size: 1.08rem; line-height: 1.55; color: var(--ink-2); }
+.tldr p em { font-style: normal; color: var(--ink); box-shadow: inset 0 -0.5em 0 var(--accent-soft); }
+
+/* ---- two-column spec lists (goals / non-goals · scope) ---- */
+.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule);
+  border-radius: 3px; overflow: hidden; }
+@media (max-width: 560px) { .twocol { grid-template-columns: 1fr; } }
+.speccol { padding: 20px 22px; border-right: 1px solid var(--rule); }
+.twocol .speccol:last-child { border-right: 0; }
+@media (max-width: 560px) { .speccol { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .twocol .speccol:last-child { border-bottom: 0; } }
+.speccol h3 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); margin: 0 0 14px; }
+.speclist { list-style: none; margin: 0; padding: 0; }
+.speclist li { position: relative; padding-left: 22px; margin-bottom: 12px; font-family: var(--body);
+  font-size: 0.98rem; line-height: 1.5; color: var(--ink-2); }
+.speclist li:last-child { margin-bottom: 0; }
+.speclist li::before { position: absolute; left: 0; top: 0; font-family: var(--mono); font-size: 12px; }
+.speclist.pos li::before { content: "\2713"; color: var(--ok); }
+.speclist.neg li::before { content: "\2715"; color: var(--accent); }
+.speclist li em { font-style: normal; color: var(--ink); }
+
+/* ---- teardown finding (non-vote ship card) ---- */
+.finding { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.finding .lab { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--ok); display: flex; align-items: center; gap: 9px; }
+.finding .lab .box { width: 14px; height: 14px; border: 1px solid var(--ok); display: inline-flex;
+  align-items: center; justify-content: center; color: var(--ok); font-size: 9px; }
+.finding h3 { font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 3.4vw, 2rem);
+  margin: 16px 0 10px; color: var(--ink); letter-spacing: -0.025em; line-height: 1.05; }
+.finding p { font-family: var(--body); color: var(--ink-2); margin: 0 0 16px; font-size: 1.02rem; line-height: 1.6; }
+.finding p em { font-style: normal; color: var(--ink); box-shadow: inset 0 -0.5em 0 var(--accent-soft); }
+
+/* ---- open questions ---- */
+.openq { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.openq li { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 18px 0;
+  border-bottom: 1px solid var(--rule); font-family: var(--body); font-size: 1.02rem; line-height: 1.5; color: var(--ink-2); }
+.openq li .q { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+.openq li em { font-style: normal; color: var(--ink); box-shadow: inset 0 -0.5em 0 var(--accent-soft); }
+
 /* ---- appendix ---- */
 .appendix { display: flex; flex-wrap: wrap; gap: 10px; }
 .appendix a { font-family: var(--mono); font-size: 12px; text-decoration: none; color: var(--ink);

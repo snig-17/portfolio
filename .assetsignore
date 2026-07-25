@@ -1,0 +1,12 @@
+node_modules/
+.git/
+.github/
+.claude/
+.gstack/
+docs/
+*.md
+package.json
+package-lock.json
+wrangler.jsonc
+.assetsignore
+.gitignore

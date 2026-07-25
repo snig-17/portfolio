@@ -1,7 +1,6 @@
 // prd.data.js — content model for the PRD portfolio.
-// Real content from Snigdha's CV. Two decision stories (SplitStar, Triage Queue)
-// are PLAUSIBLE RECONSTRUCTIONS marked TODO(snigdha) — replace with the real forks.
-// Draft copy (problem/context/roadmap) marked TODO(snigdha) — confirm wording.
+// Decision logs are REAL forks Snigdha faced. Triage Queue is a self-directed teardown
+// (kind: "teardown"), not a competition fork. Draft copy marked TODO(snigdha) to confirm.
 
 export const COPY = {
   title: ["Snigdha builds", "products that <u>think</u>."],
@@ -12,21 +11,57 @@ export const COPY = {
   thesis:
     "UCL Computer Science &amp; Economics. I design, build, and ship AI products — and I can show you " +
     "<em>the decisions</em>, not just the outcomes. This page is my spec: problem, evidence, judgement, roadmap.",
+  // One-paragraph summary — the whole page in 10 seconds.
+  tldr:
+    "Snigdha Tiwari — UCL Computer Science &amp; Economics, graduating 2027. A product-minded engineer who " +
+    "designs, builds, and ships AI products end to end, and can walk you through <em>the decisions</em>, not just " +
+    "the demos. Shipping July 2026: an AI Innovations internship at Cloudflare. Open to 2027 graduate roles at the " +
+    "edge of applied AI.",
   // TODO(snigdha): confirm wording.
   problem:
     "Most “AI products” stall at the demo. The interesting work starts after — the judgement calls under real " +
     "constraints: what to build, what to cut, and what a model can and can't be trusted to do. That's the work " +
     "I want to own, and the work this page documents.",
+  // What this document argues / explicitly does not claim.
+  goals: [
+    "Show product <em>judgement</em> under real constraints — the calls, not just the outcomes.",
+    "Prove end-to-end delivery: I design, build, and ship — not just prototype.",
+    "Demonstrate the CS × Economics lens — build the thing <em>and</em> reason about its impact.",
+  ],
+  nonGoals: [
+    "Not a research / PhD-track profile — I optimise for shipped product over publications.",
+    "Not a pure front-end or pure back-end specialist — I work across the stack.",
+    "Not claiming production scale yet — the evidence here is hackathon, internship, and self-directed work, shown honestly.",
+  ],
   // TODO(snigdha): confirm wording.
   context:
     "Computer Science and Economics at UCL taught me to hold two lenses at once: how systems are built, and why " +
     "people and markets behave the way they do. It's the throughline from a fintech app to a tutoring model to " +
     "quantitative network research — I build the thing and reason about its impact.",
+  // Lead line above the metrics grid.
+  metricsLead:
+    "What I'd want someone in my seat to move — and the evidence I've already moved it.",
+  // Roles / domains I'm targeting, and what I'm not looking for.
+  scopeIn: [
+    "2027 graduate / new-grad roles in applied AI, product engineering, or AI product.",
+    "Teams where I can <em>own product decisions and ship the code behind them</em>.",
+    "London-based or hybrid.",
+  ],
+  scopeOut: [
+    "Roles with no product ownership or spec-to-ship autonomy.",
+    "Pure research positions with no shipping.",
+    "Non-technical PM roles with no build component.",
+  ],
   // TODO(snigdha): confirm wording.
   roadmap:
     "Next: a 2027 graduate role where I can <em>own product decisions and ship the code behind them</em> — ideally " +
     "at the edge of applied AI. Shipping July 2026: an AI Innovations internship at Cloudflare.",
-  resumeUrl: "assets/Snigdha-Tiwari-CV.pdf", // TODO(snigdha): add the PDF to assets/
+  // Honest open questions — the real-draft-PRD signal.
+  openQuestions: [
+    "Where does AI genuinely <em>earn</em> its place in a product — and where is a chatbot just the easy answer? (Working thesis from Triage Queue.)",
+    "How do you keep product judgement sharp at production scale, not just at hackathon speed?",
+    "What's the right balance between owning product decisions and going deep as an engineer — and does it have to be a tradeoff?",
+  ],
 };
 
 export const METRICS = [
@@ -77,22 +112,27 @@ export const PROJECTS = [
       "How it's built: Next.js + TypeScript front end on Supabase, REST-driven smart-settlement logic, a real-time " +
       "leaderboard, and a mascot-led nudge system. I designed the rewards economy — points redeemable for vouchers, " +
       "cashback, and fractional stocks.",
-    // TODO(snigdha): replace with the REAL fork you faced at SplitStar.
     decision: {
-      constraint: "5-person team, hackathon clock. The settlement math works but the app is flat.",
-      prompt: "Do you harden the settlement engine, or build the gamified rewards loop?",
+      constraint:
+        "The brief was gamify expense-splitting. We went deep on the splitting engine and looked back at that brief " +
+        "too late — bolting real gamification on now would be rushed and sloppy.",
+      prompt: "Cram gamification in before the buzzer, or reframe it?",
       options: [
-        { id: "A", text: "Harden settlement — correctness is table stakes for a finance app." },
-        { id: "B", text: "Build the rewards loop + mascot nudges — the thing that actually wins.", mine: true },
+        { id: "A", text: "Force the gamification features in now — it literally matches the brief." },
+        {
+          id: "B",
+          text: "Don't ship it half-baked. Reframe gamification as a loyalty feature, and back the rest with a phased GTM plan.",
+          mine: true,
+        },
       ],
-      readerSplit: { A: 55, B: 45 },
+      readerSplit: { A: 58, B: 42 },
       verdict: {
         headline: "I shipped B.",
         reasoning:
-          "Settlement was already correct enough to demo; judges reward a product people <em>want to keep using</em>. " +
-          "I put the hours into the rewards economy and nudge loop, kept settlement minimal-but-right, and built the " +
-          "pitch around the behaviour-change story.",
-        badges: [{ text: "🏆 Overall Winner · 20 projects", win: true }, { text: "Starling Bank Prize" }],
+          "A half-baked feature reads worse than a deliberate one — judges can smell rushed. I reframed gamification " +
+          "as a <em>loyal-user retention layer</em> (modelled on Beli), built from prior knowledge, and turned the gap " +
+          "into a phased GTM rollout showing exactly what ships and when. A scope miss became a product-maturity story.",
+        badges: [{ text: "🏆 Overall Winner · £1,000 · 20 teams", win: true }, { text: "Starling Bank Prize" }],
       },
     },
   },
@@ -100,29 +140,24 @@ export const PROJECTS = [
     id: "triage-queue",
     name: "Triage Queue",
     date: "Feb 2026",
-    sub: "AI feedback triage · Cloudflare Workers AI · Llama 3.1",
-    tags: ["Cloudflare", "LLM pipeline", "PM eval", "prompt eng"],
+    sub: "AI ticket triage · Cloudflare Workers AI · Llama 3.1",
+    tags: ["Cloudflare", "Self-directed", "LLM pipeline", "UX teardown"],
+    kind: "teardown",
     built:
       "How it's built: an async LLM pipeline on Cloudflare Workers AI + D1 that runs sentiment analysis, severity " +
-      "scoring, and business-risk classification on ingested feedback, with prompt engineering to make Llama 3.1 " +
-      "emit reliable structured output.",
-    // TODO(snigdha): replace with the REAL fork you faced at Triage Queue.
-    decision: {
-      constraint: "The happy-path demo works. Real ingested data hasn't been tried, and the clock is short.",
-      prompt: "Do you ship the clean demo, or stress-test with real data and surface what breaks?",
-      options: [
-        { id: "A", text: "Ship the demo — it works, it looks finished." },
-        { id: "B", text: "Seed real data, break it on purpose, and document the failures.", mine: true },
-      ],
-      readerSplit: { A: 48, B: 52 },
-      verdict: {
-        headline: "I shipped B.",
-        reasoning:
-          "A demo that only survives ideal input isn't a product. I seeded real feedback, debugged the async failures, " +
-          "and surfaced <em>three architectural failure points</em> — each written up as a clear problem statement and " +
-          "an actionable feature recommendation, PM-style.",
-        badges: [{ text: "3 failure points → feature specs", win: true }, { text: "github.com/snig-17/triage-queue" }],
-      },
+      "scoring, and business-risk classification on ingested tickets, with prompt engineering to make Llama 3.1 " +
+      "emit reliable structured output — tried across multiple employee interfaces (dashboard, chatbot).",
+    brief:
+      "Self-initiated: build on Cloudflare's own stack to learn the product before joining — and pressure-test its " +
+      "UX. A ticket-triage tool that sorts incoming customer tickets with AI, tested across several employee " +
+      "interfaces to see which one people actually want.",
+    finding: {
+      headline: "Use AI with intention.",
+      reasoning:
+        "A chatbot is too easy to reach for — the sharper question is whether AI is needed <em>at all</em>. Watching " +
+        "how people actually triage, they don't want a conversation; they want the <em>whole queue at a glance with " +
+        "what's urgent surfaced</em>. AI earns its place in the sorting and prioritisation, not the interface.",
+      badges: [{ text: "Self-directed teardown", win: true }, { text: "Cloudflare Workers AI · Llama 3.1" }],
     },
   },
 ];
