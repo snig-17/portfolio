@@ -97,7 +97,7 @@ function renderAppendix() {
   const mount = document.getElementById("appendixMount");
   const links = [
     { href: COPY.resumeUrl, txt: "↧ Résumé (PDF)" },
-    { href: "https://linkedin.com/in/snigdha-tiwari", txt: "in/snigdha-tiwari" },
+    { href: "https://www.linkedin.com/in/snigdha-tiwari-0b6227251/", txt: "in/snigdha-tiwari" },
     { href: "https://github.com/snig-17", txt: "@snig-17" },
     { href: "mailto:snigdha.tiwari.24@ucl.ac.uk", txt: "snigdha.tiwari.24@ucl.ac.uk" },
   ];
