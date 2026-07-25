@@ -76,6 +76,47 @@ export const METRICS = [
 
 export const PROJECTS = [
   {
+    id: "pitchswitch",
+    name: "PitchSwitch",
+    date: "Jun 2026",
+    sub: "Anticipatory World Cup match-switching · IBM Granite · Docling · Streamlit",
+    tags: ["Applied AI", "IBM Granite", "ML + product", "live demo"],
+    built:
+      "How it's built: Metrica 25fps player tracking + StatsBomb events feed a per-match danger score and its " +
+      "<em>rising-danger derivative</em>; a deterministic switch schedule fires off the danger differential; IBM " +
+      "Granite writes each switch call, grounded by Docling in team primers and the Laws of the Game; IBM Watson " +
+      "Text to Speech voices it; Streamlit renders the live feed on an HTML5 canvas.",
+    decision: {
+      constraint:
+        "The whole promise is switching you to the action <em>before</em> the goal. But the AI narration (Granite) " +
+        "adds latency — and if the cut waits on the model, you miss the exact moment the product exists to catch.",
+      prompt: "Do you let the LLM drive the switch, or keep it out of the critical path?",
+      options: [
+        { id: "A", text: "One clean AI pipeline — Granite both picks the switch and narrates it." },
+        {
+          id: "B",
+          text: "Decide the switch deterministically from the danger differential; Granite only writes the call.",
+          mine: true,
+        },
+      ],
+      readerSplit: { A: 52, B: 48 },
+      verdict: {
+        headline: "I shipped B.",
+        reasoning:
+          "The product's entire value is <em>anticipation</em> — a switch blocked on model latency defeats the point. " +
+          "So the cut is deterministic (a rolling 90-second danger window and its time derivative), instant and " +
+          "explainable on-screen, and Granite is used where it's actually additive: the spoken call, grounded by " +
+          "Docling. <em>Granite writes the call, it doesn't pick it.</em> On real StatsBomb data it flagged goals " +
+          "~71 seconds early.",
+        badges: [
+          { text: "~71s avg lead time · real StatsBomb data", win: true },
+          { text: "IBM Granite · Docling · Watson TTS" },
+          { text: "▶ live demo · github.com/snig-17/pitchswitch" },
+        ],
+      },
+    },
+  },
+  {
     id: "gemma",
     name: "Gemma",
     date: "Mar 2026",
@@ -157,7 +198,11 @@ export const PROJECTS = [
         "A chatbot is too easy to reach for — the sharper question is whether AI is needed <em>at all</em>. Watching " +
         "how people actually triage, they don't want a conversation; they want the <em>whole queue at a glance with " +
         "what's urgent surfaced</em>. AI earns its place in the sorting and prioritisation, not the interface.",
-      badges: [{ text: "Self-directed teardown", win: true }, { text: "Cloudflare Workers AI · Llama 3.1" }],
+      badges: [
+        { text: "Self-directed teardown", win: true },
+        { text: "Cloudflare Workers AI · Llama 3.1" },
+        { text: "github.com/snig-17/triage-queue" },
+      ],
     },
   },
 ];
