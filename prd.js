@@ -156,7 +156,7 @@ function renderCover() {
     <div class="status-row rise d4">
       <span class="pill hot"><span class="led"></span>Status:&nbsp;<span id="statusVal" class="statusval">${COPY.statusFrom}</span></span>
       <span class="pill"><span class="led"></span>Format: living spec</span>
-      <span class="pill"><span class="led"></span>Last review: Jul 2026</span>
+      <span class="pill"><span class="led"></span>Last review: ${COPY.meta.updated}</span>
     </div>`;
   // wrap <u> in title with gradient class
   c.querySelectorAll(".title u").forEach(u => u.classList.add("u"));

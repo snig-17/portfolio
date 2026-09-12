@@ -4,19 +4,19 @@
 
 export const COPY = {
   title: ["Snigdha builds", "products that <u>think</u>."],
-  version: "v2026.1",
-  meta: { owner: "Snigdha Tiwari", role: "product-minded engineer", base: "London", updated: "Jul 2026" },
+  version: "v2026.2",
+  meta: { owner: "Snigdha Tiwari", role: "product-minded engineer", base: "London", updated: "Sep 2026" },
   statusFrom: "Draft",
   statusTo: "Open to 2027 grad roles",
   thesis:
-    "UCL Computer Science &amp; Economics. I design, build, and ship AI products — and I can show you " +
+    "UCL Computer Science (major) and Economics (minor). I design, build, and ship AI products — and I can show you " +
     "<em>the decisions</em>, not just the outcomes. This page is my spec: problem, evidence, judgement, roadmap.",
   // One-paragraph summary — the whole page in 10 seconds.
   tldr:
-    "Snigdha Tiwari — UCL Computer Science &amp; Economics, graduating 2027. A product-minded engineer who " +
-    "designs, builds, and ships AI products end to end, and can walk you through <em>the decisions</em>, not just " +
-    "the demos. Shipping July 2026: an AI Innovations internship at Cloudflare. Open to 2027 graduate roles at the " +
-    "edge of applied AI.",
+    "Snigdha Tiwari — UCL Computer Science (major) and Economics (minor), graduating May 2027. A product-minded " +
+    "engineer who designs, builds, and ships AI products end to end, and can walk you through <em>the decisions</em>, " +
+    "not just the demos. Currently an AI Innovations &amp; Operations intern at Cloudflare, where the automations " +
+    "I have shipped return 7+ hours a week to the People team. Open to 2027 graduate roles at the edge of applied AI.",
   // TODO(snigdha): confirm wording.
   problem:
     "Most “AI products” stall at the demo. The interesting work starts after — the judgement calls under real " +
@@ -55,7 +55,8 @@ export const COPY = {
   // TODO(snigdha): confirm wording.
   roadmap:
     "Next: a 2027 graduate role where I can <em>own product decisions and ship the code behind them</em> — ideally " +
-    "at the edge of applied AI. Shipping July 2026: an AI Innovations internship at Cloudflare.",
+    "at the edge of applied AI. Currently shipping applied-AI automation at Cloudflare, and graduating from UCL in " +
+    "May 2027.",
   // Honest open questions — the real-draft-PRD signal.
   openQuestions: [
     "Where does AI genuinely <em>earn</em> its place in a product — and where is a chatbot just the easy answer? (Working thesis from Triage Queue.)",
@@ -70,8 +71,8 @@ export const METRICS = [
   { value: 19, suffix: "", label: "countries\nvolunteer network built", kind: "impact" },
   { value: 800, prefix: "₹", suffix: "K+", label: "funding raised\nITC · Christ · Goonj", kind: "impact" },
   // TODO(snigdha): confirm these two engineering figures.
-  { value: 3, suffix: "", label: "builds shipped in <24h\nall placed (26 / 20 teams)", kind: "eng" },
-  { value: 6, suffix: "", label: "languages shipped\nPython · TS · Swift · SQL · Cypher…", kind: "eng" },
+  { value: 3, suffix: "", label: "builds shipped in <48h\nall placed (26 / 20 teams)", kind: "eng" },
+  { value: 7, suffix: "+", label: "hours/week returned\nCloudflare People team automations", kind: "eng" },
 ];
 
 export const PROJECTS = [
@@ -208,11 +209,11 @@ export const PROJECTS = [
 ];
 
 export const CHANGELOG = [
-  { ver: "v2026.3", date: "Jul 2026", upcoming: true, org: "Cloudflare", role: "AI Innovations & Operations Intern", loc: "London", note: "Incoming — applied AI meets product operations." },
-  { ver: "v2026.2", date: "Jun 2026 – Present", org: "The Ditchley Foundation", role: "Networks Research Intern", loc: "Remote, UK", note: "Quantitative network research on a global stakeholder graph — Neo4j / Cypher, Salesforce CRM." },
+  { ver: "v2026.3", date: "Jul 2026 – Present", org: "Cloudflare", role: "AI Innovations & Operations Intern", loc: "London", note: "Shadowed the People team, then shipped AI agents automating EMEA payroll, a benefits applet unifying every provider, and a background-check dashboard — 7+ hours/week returned." },
+  { ver: "v2026.2", date: "Jun – Jul 2026", org: "The Ditchley Foundation", role: "Quantitative Research Intern — Networks", loc: "Oxford, UK", note: "Neo4j/Cypher pipeline over an 83,000-node graph. Shipped Connector Insights, the dashboard the team now uses to decide who to engage next." },
   { ver: "v2025.2", date: "Apr 2025", org: "EY-Parthenon", role: "Transaction Strategy & Execution Intern", loc: "Bangalore", note: "Buy-side operational + tech due diligence. EY NextGen UK Finalist 2025." },
   { ver: "v2024.1", date: "Aug 2022 – May 2024", org: "Ladki Padhao", role: "Head of Design & Scaling", loc: "Bangalore", note: "Financial-literacy programme: 9,500+ reached, ₹800K+ raised, Diana Award." },
-  { ver: "edu", date: "Sep 2024 – Jul 2027", org: "University College London", role: "BASc Computer Science & Economics", loc: "London", note: "Year 1: First Class Honours." },
+  { ver: "edu", date: "Sep 2024 – May 2027", org: "University College London", role: "BASc Computer Science (major), Economics (minor)", loc: "London", note: "Years 1 and 2: First Class average, including 98% in Logic, Computation & Language Theory." },
 ];
 
 // TODO(snigdha): confirm which photographs map where.
