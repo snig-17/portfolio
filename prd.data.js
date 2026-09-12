@@ -9,19 +9,21 @@ export const COPY = {
   statusFrom: "Draft",
   statusTo: "Open to 2027 grad roles",
   thesis:
-    "UCL Computer Science (major) and Economics (minor). I design, build, and ship AI products — and I can show you " +
-    "<em>the decisions</em>, not just the outcomes. This page is my spec: problem, evidence, judgement, roadmap.",
+    "Most AI products stall at the demo. The work that matters starts after: deciding what to build, what to cut, " +
+    "and what a model can't be trusted to do. That's the work I want to own, and this page is the evidence — " +
+    "<em>decisions included</em>.",
   // One-paragraph summary — the whole page in 10 seconds.
   tldr:
-    "Snigdha Tiwari — UCL Computer Science (major) and Economics (minor), graduating May 2027. A product-minded " +
-    "engineer who designs, builds, and ships AI products end to end, and can walk you through <em>the decisions</em>, " +
-    "not just the demos. Currently an AI Innovations &amp; Operations intern at Cloudflare, where the automations " +
-    "I have shipped return 7+ hours a week to the People team. Open to 2027 graduate roles at the edge of applied AI.",
+    "Snigdha Tiwari — UCL Computer Science (major) and Economics (minor), graduating May 2027. I build AI products " +
+    "and can show you the decisions behind them, not just the demos. Currently an AI Innovations &amp; Operations " +
+    "intern at Cloudflare, where the automations I have shipped return 7+ hours a week to the People team. " +
+    "Open to 2027 graduate roles at the edge of applied AI.",
   // TODO(snigdha): confirm wording.
   problem:
-    "Most “AI products” stall at the demo. The interesting work starts after — the judgement calls under real " +
-    "constraints: what to build, what to cut, and what a model can and can't be trusted to do. That's the work " +
-    "I want to own, and the work this page documents.",
+    "The demo is the easy part. A model that works on the happy path will fail on a queue of real inputs, and the " +
+    "failure is usually invisible until somebody reads the outputs one at a time. So the question I care about is " +
+    "less “what should we build” than “how would we know if this is working” — and most AI products cannot answer " +
+    "that about themselves.",
   // What this document argues / explicitly does not claim.
   goals: [
     "Show product <em>judgement</em> under real constraints — the calls, not just the outcomes.",
