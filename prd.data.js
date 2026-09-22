@@ -210,7 +210,7 @@ export const PROJECTS = [
 ];
 
 export const CHANGELOG = [
-  { ver: "v2026.3", date: "Jul 2026 – Dec 2026", org: "Cloudflare", role: "AI Innovations & Operations Intern", loc: "London", note: "Ran discovery across the People team, then shipped AI agents automating ADP payroll across six countries in EMEA and APJC, a benefits applet unifying 8 providers across 6 countries, and a global onboarding dashboard presented to the whole People function — 7+ hours/week returned. Extended part time through December." },
+  { ver: "v2026.3", date: "Jul 2026 – Dec 2026", org: "Cloudflare", role: "AI Innovations & Operations Intern", loc: "London", note: "Ran discovery across the People team, then shipped AI agents automating payroll and benefits workflows across multiple regions, plus a global onboarding dashboard presented to the whole function — 7+ hours/week returned. Extended part time through December." },
   { ver: "v2026.2", date: "Jun – Jul 2026", org: "The Ditchley Foundation", role: "Networks Research Intern", loc: "Oxford, UK", note: "Neo4j/Cypher pipeline and network analysis. Shipped Connector Insights, the dashboard the Networks team adopted for deciding who to engage next." },
   { ver: "v2025.2", date: "Apr 2025", org: "EY-Parthenon", role: "Transaction Strategy & Execution Intern", loc: "Bangalore", note: "Buy-side operational + tech due diligence. EY NextGen UK Finalist 2025." },
   { ver: "v2024.1", date: "Aug 2022 – May 2024", org: "Ladki Padhao", role: "Head of Design & Scaling", loc: "Bangalore", note: "Financial-literacy programme: 9,500+ reached, ₹800K+ raised, Diana Award." },
