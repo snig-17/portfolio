@@ -5,7 +5,7 @@
 export const COPY = {
   title: ["Snigdha builds", "products that <u>think</u>."],
   version: "v2026.2",
-  meta: { owner: "Snigdha Tiwari", role: "product-minded engineer", base: "London", updated: "Sep 2026" },
+  meta: { owner: "Snigdha Tiwari", role: "product manager who builds", base: "London", updated: "Sep 2026" },
   statusFrom: "Draft",
   statusTo: "Open to 2027 grad roles",
   thesis:
@@ -17,7 +17,7 @@ export const COPY = {
     "Snigdha Tiwari — UCL Computer Science (major) and Economics (minor), graduating May 2027. I build AI products " +
     "and can show you the decisions behind them, not just the demos. Currently an AI Innovations &amp; Operations " +
     "intern at Cloudflare, where the automations I have shipped return 7+ hours a week to the People team. " +
-    "Open to 2027 graduate roles at the edge of applied AI.",
+    "Open to 2027 graduate product roles at the edge of applied AI.",
   // TODO(snigdha): confirm wording.
   problem:
     "The demo is the easy part. A model that works on the happy path will fail on a queue of real inputs, and the " +
@@ -45,14 +45,13 @@ export const COPY = {
     "What I'd want someone in my seat to move — and the evidence I've already moved it.",
   // Roles / domains I'm targeting, and what I'm not looking for.
   scopeIn: [
-    "2027 graduate / new-grad roles in applied AI, product engineering, or AI product.",
+    "2027 graduate / new-grad roles in product management, applied AI, or AI product.",
     "Teams where I can <em>own product decisions and ship the code behind them</em>.",
-    "London-based or hybrid.",
+    "London or US — open to relocation.",
   ],
   scopeOut: [
     "Roles with no product ownership or spec-to-ship autonomy.",
     "Pure research positions with no shipping.",
-    "Non-technical PM roles with no build component.",
   ],
   // TODO(snigdha): confirm wording.
   roadmap:
@@ -211,7 +210,7 @@ export const PROJECTS = [
 ];
 
 export const CHANGELOG = [
-  { ver: "v2026.3", date: "Jul 2026 – Dec 2026", org: "Cloudflare", role: "AI Innovations & Operations Intern", loc: "London", note: "Shadowed the People team, then shipped AI agents automating EMEA payroll, a benefits applet unifying every provider, and a background-check dashboard — 7+ hours/week returned. Extended part time through December." },
+  { ver: "v2026.3", date: "Jul 2026 – Dec 2026", org: "Cloudflare", role: "AI Innovations & Operations Intern", loc: "London", note: "Ran discovery across the People team, then shipped AI agents automating ADP payroll across six countries in EMEA and APJC, a benefits applet unifying 8 providers across 6 countries, and a global onboarding dashboard presented to the whole People function — 7+ hours/week returned. Extended part time through December." },
   { ver: "v2026.2", date: "Jun – Jul 2026", org: "The Ditchley Foundation", role: "Networks Research Intern", loc: "Oxford, UK", note: "Neo4j/Cypher pipeline and network analysis. Shipped Connector Insights, the dashboard the Networks team adopted for deciding who to engage next." },
   { ver: "v2025.2", date: "Apr 2025", org: "EY-Parthenon", role: "Transaction Strategy & Execution Intern", loc: "Bangalore", note: "Buy-side operational + tech due diligence. EY NextGen UK Finalist 2025." },
   { ver: "v2024.1", date: "Aug 2022 – May 2024", org: "Ladki Padhao", role: "Head of Design & Scaling", loc: "Bangalore", note: "Financial-literacy programme: 9,500+ reached, ₹800K+ raised, Diana Award." },
